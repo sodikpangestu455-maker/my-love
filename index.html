@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Photo</title>
+
+<style>
+body{
+    margin:0;
+    background:#0d1117;
+    color:white;
+    font-family:Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.box{
+    width:320px;
+    background:#161b22;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+}
+
+input{
+    width:90%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:8px;
+}
+
+button{
+    width:95%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:8px;
+    background:#00bcd4;
+    color:white;
+    cursor:pointer;
+}
+
+img{
+    display:none;
+    width:100%;
+    margin-top:20px;
+    border-radius:10px;
+}
+
+#pesan{
+    margin-top:10px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="box">
+
+<h2>🔒 Private Photo</h2>
+
+<p>Masukkan PIN</p>
+
+<input type="password" id="pin" placeholder="PIN">
+
+<button onclick="cekPin()">Buka</button>
+
+<p id="pesan"></p>
+
+<img id="foto" src="IMG-20260322-WA0034.jpg">
+
+</div>
+
+<script>
+
+// ===== GANTI DI SINI =====
+const PIN = "2009";
+const FOTO = "IMG-20260322-WA0034.jpg";
+// =========================
+
+document.getElementById("foto").src = FOTO;
+
+function cekPin(){
+
+let pin = document.getElementById("pin").value;
+
+if(pin === PIN){
+
+document.getElementById("foto").style.display="block";
+document.getElementById("pesan").innerHTML="✅ PIN Benar";
+
+}else{
+
+document.getElementById("foto").style.display="none";
+document.getElementById("pesan").innerHTML="❌ PIN Salah";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
