@@ -1,98 +1,62 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WhatsApp</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: #111b21;
-      font-family: 'Segoe UI', sans-serif;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .lock-screen, .content {
-      text-align: center;
-      width: 90%;
-      max-width: 350px;
-    }
-    .wa-icon {
-      width: 80px;
-      margin-bottom: 20px;
-    }
-    input {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      margin-top: 10px;
-      text-align: center;
-      font-size: 18px;
-      letter-spacing: 5px;
-      background: #2a3942;
-      color: white;
-    }
-    button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 15px;
-      border: none;
-      border-radius: 8px;
-      background: #25D366;
-      color: white;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .content { display: none; }
-    .content img {
-      width: 100%;
-      border-radius: 15px;
-      margin-bottom: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-    }
-    .error { color: #ff4d4d; margin-top: 10px; display: none; }
-  </style>
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="id">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>WhatsApp Terkunci</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          background: #0b141a;
+          color: #e9edef;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+        }
+        .lock-screen, .content {
+          text-align: center;
+          width: 90%;
+          max-width: 350px;
+        }
+        .wa-icon { width: 80px; margin-bottom: 20px; }
+        input {
+          width: 100%;
+          padding: 12px;
+          border-radius: 8px;
+          border: none;
+          margin-top: 10px;
+          text-align: center;
+          font-size: 18px;
+          letter-spacing: 5px;
+          background: #2a3942;
+          color: white;
+        }
+        button {
+          width: 100%;
+          padding: 12px;
+          margin-top: 15px;
+          border: none;
+          border-radius: 8px;
+          background: #25D366;
+          color: white;
+          font-weight: bold;
+          font-size: 16px;
+          cursor: pointer;
+        }
+        .content { display: none; }
+        .content img {
+          width: 100%;
+          border-radius: 15px;
+          margin-bottom: 15px;
+          box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+        }
+        .error { color: #ff4d4d; margin-top: 10px; display: none; }
+      </style>
+    </head>
+    <body>
 
-  <!-- LAYAR KUNCI -->
-  <div class="lock-screen" id="lock">
-    <svg class="wa-icon" viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-    <h2>WhatsApp Terkunci 🔒</h2>
-    <p>Masukkan PIN untuk melihat profil</p>
-    <input type="password" id="pin" placeholder="****" maxlength="4">
-    <button onclick="checkPin()">Buka</button>
-    <p class="error" id="error">PIN salah coba lagi</p>
-  </div>
-
-  <!-- ISI SETELAH BUKA -->
-  <div class="content" id="content">
-    <img src="IMG-20260322-WA0034.jpg" alt="Foto Kamu"> 
-    <h2>Sodik ✨</h2>
-    <p>"haloooo cintaku💝"</p>
-    <a href="https://wa.me/628984813009" style="text-decoration:none;">
-      <button>Chat Aku di WA 💬</button>
-    </a>
-  </div>
-
-<script>
-  function checkPin() {
-    const pin = document.getElementById('pin').value;
-    const correctPin = "2009"; // PIN KAMU
-
-    if (pin === correctPin) {
-      document.getElementById('lock').style.display = 'none';
-      document.getElementById('content').style.display = 'block';
-    } else {
-      document.getElementById('error').style.display = 'block';
-    }
-  }
-</script>
-
-</body>
-</html>
+      <!-- LAYAR KUNCI -->
+      <div class="lock-screen" id="lock">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-.004-.041-1.041-1.804-1.588-3.849-1.587-5.007.858-10.102 5.733-11.675 4.834-1.562 10.05.795 11.618 5.784.93 2.93.29 6.06-1.69 8.64l-1.68 1.66-6.16 1.59c-5.007 1.587-10.102-.858-11.675-5.733zm6.597-3.807c1.676.995 3.276.596 4.607.391l.394-.03c.62-.052 1.188-.192 1.734-.364.527-.165.97-.39 1.437-.67l.008-.004c.24-.14.484-.29.72-.46.24-.17.46-.35.66-.55l.01-.01.003-.003c.16-.17.31-.35.44-.54.13-.19.25-.39.34-.6l.002-.002.001-.002c.09-.21.17-.43.22-.66.05-.23.08-.47.08-.71v-.001c0-.12 0-.24-.01-.36l-.002-.01c-.01-.12-.02-.24-.04-.36l-.001-.005c-.02-.12-.04-.24-.07-.36l-.002-.01c-.03-.12-.06-.24-.1-.36l-.003-.01c-.04-.12-.08-.24-.13-.36l-.004-.01c-.05-.12-.1-.24-.16-.36l-.005-.01c-.06-.12-.12-.24-.19-.36l-.006-.01c-.07-.12-.14-.24-.22-.36l-.007-.01c-.08-.12-.16-.24-.25-.36l-.008-.01c-.09-.12-.18-.24-.28-.36l-.009-.01c-.1-.12-.2-.24-.31-.36l-.01-.01c-.11-.12-.22-.24-.34-.36l-.011-.01c-.12-.12-.24-.24-.37-.36l-.012-.01c-.13-.12-.26-.24-.4-.36l-.013-.01c-.14-.12-.28-.24-.43-.36l-.014-.01c-.15-.12-.3-.24-.46-.36l-.015-.01c-.16-.12-.32-.24-.49-.36l-.016-.01c-.17-.12-.34-.24-.52-.36l-.017-.01c-.18-.12-.36-.24-.55-.36l-.018-.01c-.19-.12-.38-.24-.58-.36l-.019-.01c-.2-.12-.4-.24-.61-.36l-.02-.01c-.21-.12-.42-.24-.64-.36l-.021-.01c-.22-.12-.44-.24-.67-.36l-.022-.01c-.23-.12-.46-.24-.7-.36l-.023-.01c-.24-.12-.48-.24-.73-.36l-.024-.01c-.25-.12-.5-.24-.76-.36l-.025-.01c-.26-.12-.52-.24-.79-.36l-.026-.01c-.27-.12-.54-.24-.82-.36l-.027-.01c-.28-.12-.56-.24-.85-.36l-.028-.01c-.29-.12-.58-.24-.88-.36l-.029-.01c-.3-.12-.6-.24-.91-.36l-.03-.01c-.31-.12-.62-.24-.94-.36l-.031-.01c-.32-.12-.64-.24-.97-.36l-.032-.01c-.33-.12-.66-.24-1-.36l-.033-.01c-.34-.12-.68-.24-1.03-.36l-.034-.01c-.35-.12-.7-.24-1.06-.36l-.035-.01c-.36-.12-.72-.24-1.09-.36l-.036-.01c-.
