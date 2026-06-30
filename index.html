@@ -1,107 +1,97 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Private Photo</title>
-
-<style>
-body{
-    margin:0;
-    background:#0d1117;
-    color:white;
-    font-family:Arial,sans-serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-}
-
-.box{
-    width:320px;
-    background:#161b22;
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
-}
-
-input{
-    width:90%;
-    padding:12px;
-    margin-top:15px;
-    border:none;
-    border-radius:8px;
-}
-
-button{
-    width:95%;
-    padding:12px;
-    margin-top:15px;
-    border:none;
-    border-radius:8px;
-    background:#00bcd4;
-    color:white;
-    cursor:pointer;
-}
-
-img{
-    display:none;
-    width:100%;
-    margin-top:20px;
-    border-radius:10px;
-}
-
-#pesan{
-    margin-top:10px;
-}
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #111b21;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .lock-screen, .content {
+      text-align: center;
+      width: 90%;
+      max-width: 350px;
+    }
+    .wa-icon {
+      width: 80px;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 10px;
+      text-align: center;
+      font-size: 18px;
+      letter-spacing: 5px;
+      background: #2a3942;
+      color: white;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #25D366;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .content { display: none; }
+    .content img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    }
+    .error { color: #ff4d4d; margin-top: 10px; display: none; }
+  </style>
 </head>
 <body>
 
-<div class="box">
+  <!-- LAYAR KUNCI -->
+  <div class="lock-screen" id="lock">
+    <svg class="wa-icon" viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+    <h2>WhatsApp Terkunci 🔒</h2>
+    <p>Masukkan PIN untuk melihat profil</p>
+    <input type="password" id="pin" placeholder="****" maxlength="4">
+    <button onclick="checkPin()">Buka</button>
+    <p class="error" id="error">PIN salah coba lagi</p>
+  </div>
 
-<h2>🔒 Private Photo</h2>
-
-<p>Masukkan PIN</p>
-
-<input type="password" id="pin" placeholder="PIN">
-
-<button onclick="cekPin()">Buka</button>
-
-<p id="pesan"></p>
-
-<img id="foto" src="IMG-20260322-WA0034.jpg">
-
-</div>
+  <!-- ISI SETELAH BUKA -->
+  <div class="content" id="content">
+    <img src="IMG-20260322-WA0034.jpg" alt="Foto Kamu"> 
+    <h2>Sodik ✨</h2>
+    <p>"haloooo cintaku💝"</p>
+    <a href="https://wa.me/628984813009" style="text-decoration:none;">
+      <button>Chat Aku di WA 💬</button>
+    </a>
+  </div>
 
 <script>
+  function checkPin() {
+    const pin = document.getElementById('pin').value;
+    const correctPin = "2009"; // PIN KAMU
 
-// ===== GANTI DI SINI =====
-const PIN = "2009";
-const FOTO = "IMG-20260322-WA0034.jpg";
-// =========================
-
-document.getElementById("foto").src = FOTO;
-
-function cekPin(){
-
-let pin = document.getElementById("pin").value;
-
-if(pin === PIN){
-
-document.getElementById("foto").style.display="block";
-document.getElementById("pesan").innerHTML="✅ PIN Benar";
-
-}else{
-
-document.getElementById("foto").style.display="none";
-document.getElementById("pesan").innerHTML="❌ PIN Salah";
-
-}
-
-}
-
+    if (pin === correctPin) {
+      document.getElementById('lock').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    } else {
+      document.getElementById('error').style.display = 'block';
+    }
+  }
 </script>
 
 </body>
