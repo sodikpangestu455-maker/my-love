@@ -5,83 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WhatsApp Terkunci</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0b141a;
-      color: #e9edef;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .lock-screen, .content {
-      text-align: center;
-      width: 90%;
-      max-width: 350px;
-    }
+    body {font-family: Arial, sans-serif; background: #0b141a; color: #e9edef; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;}
+    .lock-screen, .content {text-align: center; width: 90%; max-width: 350px;}
     .wa-icon { width: 80px; margin-bottom: 20px; }
-    input {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      margin-top: 10px;
-      text-align: center;
-      font-size: 18px;
-      letter-spacing: 5px;
-      background: #2a3942;
-      color: white;
-    }
-    button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 15px;
-      border: none;
-      border-radius: 8px;
-      background: #25D366;
-      color: white;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-    }
+    input {width: 100%; padding: 12px; border-radius: 8px; border: none; margin-top: 10px; text-align: center; font-size: 18px; letter-spacing: 5px; background: #2a3942; color: white;}
+    button {width: 100%; padding: 12px; margin-top: 15px; border: none; border-radius: 8px; background: #25D366; color: white; font-weight: bold; font-size: 16px; cursor: pointer;}
     .content { display: none; }
-    .content img {
-      width: 100%;
-      border-radius: 15px;
-      margin-bottom: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-    }
+    .content img {width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.4);}
     .error { color: #ff4d4d; margin-top: 10px; display: none; }
   </style>
 </head>
 <body>
-
-  <!-- LAYAR KUNCI -->
   <div class="lock-screen" id="lock">
     <svg class="wa-icon" viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.007.858-10.102 5.733-11.675 4.834-1.562 10.05.795 11.618 5.784.93 2.93.29 6.06-1.69 8.64l-1.68 1.66-6.16 1.59c-5.007 1.587-10.102-.858-11.675-5.733z"/></svg>
     <h2>WhatsApp Terkunci</h2>
-    <p>Masukkan PIN untuk melihat profil</p>
+    <p>Masukkan PIN 4 digit untuk melihat profil</p>
     <input type="password" id="pin" placeholder="****" maxlength="4">
     <button onclick="checkPin()">Buka</button>
     <p class="error" id="error">PIN salah coba lagi</p>
   </div>
-
-  <!-- ISI SETELAH BUKA -->
   <div class="content" id="content">
-    <img src="IMG-20260322-WA0034.jpg" alt="Foto Kamu">
+    <img src"" alt="Foto Kamu">
     <h2>Mellysa</h2>
     <p>"🤍"</p>
-    <a href="https://wa.me/628984813009" style="text-decoration:none;">
-      <button>Chat Aku di WA</button>
-    </a>
+    <a href="https://wa.me/628984813009" style="text-decoration:none;"><button>Chat Aku di WA</button></a>
   </div>
-
   <script>
     function checkPin() {
       const pin = document.getElementById('pin').value;
-      const correctPin = "2009"; // PIN KAMU
-
+      const correctPin = "2010"; // PIN MELLYSA
       if (pin === correctPin) {
         document.getElementById('lock').style.display = 'none';
         document.getElementById('content').style.display = 'block';
